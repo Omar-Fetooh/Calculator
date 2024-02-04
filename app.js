@@ -1,3 +1,6 @@
+let displayScreen = document.querySelector('.display')
+let numberButtons = document.querySelectorAll('.number')
+
 
 // Basic operations of any calculator
 function add(a, b) {
@@ -22,3 +25,19 @@ function divide(a, b) {
 function operate(operation, firstNum, secondNum) {
     return operation(firstNum, secondNum)
 }
+
+
+let displayValue = '';
+function populateDisplay(number) {
+    displayValue += number;
+    displayScreen.textContent = displayValue;
+}
+
+numberButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log("Number Clicked ")
+        populateDisplay(button.textContent)
+    })
+})
+
+

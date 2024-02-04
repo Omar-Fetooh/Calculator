@@ -1,0 +1,69 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 50px;
+    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid black;
+    border-radius: 5%;
+    width: 380px;
+    height: 500px;
+    background-color: black;
+
+}
+
+.display {
+    display: block;
+    width: 100%;
+    height: calc(100%/5.5);
+    border: 5px solid black;
+    margin-bottom: -18px;
+    /* border-radius: 10%; */
+    color: white;
+}
+
+.firstRow,
+.secondRow,
+.thirdRow,
+.fourthRow,
+.lastRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 78px;
+    margin: -15px 2px;
+}
+
+.lastRow {
+    margin-bottom: -30px;
+}
+
+button {
+    width: calc(100% /4);
+    height: 100%;
+    margin: 1px;
+    border: 2px solid black;
+    font-size: 2rem;
+    border-radius: 8%;
+    background-color: darkslateblue;
+    color: white;
+}
+
+button.operation {
+    background-color: orange;
+}
+
+.zeroButton {
+    width: 50%;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: cornflowerblue;
+    /* color: black; */
+}
