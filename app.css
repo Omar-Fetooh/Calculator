@@ -2,6 +2,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container {
@@ -23,7 +24,6 @@ main {
     height: calc(100%/5.5);
     border: 5px solid black;
     margin-bottom: -18px;
-    /* border-radius: 10%; */
     color: white;
 }
 
@@ -65,5 +65,4 @@ button.operation {
 button:hover {
     cursor: pointer;
     background-color: cornflowerblue;
-    /* color: black; */
 }

@@ -1,6 +1,14 @@
 let displayScreen = document.querySelector('.display')
 let numberButtons = document.querySelectorAll('.number')
+let equalButton = document.querySelector('.equalButton')
+let clearButton = document.querySelector('.clearButton')
+let operators = document.querySelectorAll('.OPERATOR')
 
+
+let currentOperation;
+let firstNum;
+let secondNum;
+let ramEmpty = true;
 
 // Basic operations of any calculator
 function add(a, b) {
@@ -21,11 +29,22 @@ function divide(a, b) {
     return a / b;
 }
 
-//
 function operate(operation, firstNum, secondNum) {
-    return operation(firstNum, secondNum)
+    // return operation(firstNum, secondNum)
+    console.log(operation)
+    if (operation === '+') {
+        return add(firstNum, secondNum)
+    }
+    else if (operation === '-') {
+        return subtract(firstNum, secondNum)
+    }
+    else if (operation === '*') {
+        return multiply(firstNum, secondNum)
+    }
+    else if (operation === '/') {
+        return divide(firstNum, secondNum)
+    }
 }
-
 
 let displayValue = '';
 function populateDisplay(number) {
@@ -37,7 +56,36 @@ numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         console.log("Number Clicked ")
         populateDisplay(button.textContent)
+        if (ramEmpty == true) {
+            firstNum = Number(button.textContent);
+            ramEmpty = false
+        }
+        else {
+            secondNum = Number(button.textContent);
+
+            // ramEmpty = false;
+        }
     })
 })
 
+operators.forEach(operator => {
+    operator.addEventListener('click', () => {
+        console.log(operator.textContent)
+        currentOperation = operator.textContent
+    })
+})
 
+equalButton.addEventListener('click', () => {
+    console.log(typeof (firstNum))
+    console.log((firstNum))
+    console.log((secondNum))
+    let res = operate(currentOperation, firstNum, secondNum)
+    console.log(res)
+    displayScreen.textContent = res;
+})
+
+clearButton.addEventListener('click', () => {
+    displayScreen.textContent = 0;
+    displayValue = "";
+    ramEmpty = true;
+})
