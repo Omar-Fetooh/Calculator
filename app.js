@@ -26,7 +26,7 @@ function divide(a, b) {
         console.log("Stop,Clown")
         return
     }
-    return a / b;
+    return (a / b).toFixed(2);
 }
 
 function operate(operation, firstNum, secondNum) {
@@ -63,7 +63,7 @@ numberButtons.forEach(button => {
         else {
             secondNum = Number(button.textContent);
 
-            // ramEmpty = false;
+            ramEmpty = false;
         }
     })
 })
@@ -80,8 +80,13 @@ equalButton.addEventListener('click', () => {
     console.log((firstNum))
     console.log((secondNum))
     let res = operate(currentOperation, firstNum, secondNum)
-    console.log(res)
+    console.log(Number(res))
     displayScreen.textContent = res;
+
+    firstNum = Number(res);
+    secondNum = ""
+    displayValue = res;
+    ramEmpty = true;
 })
 
 clearButton.addEventListener('click', () => {
