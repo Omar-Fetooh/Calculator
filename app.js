@@ -4,7 +4,7 @@ let equalButton = document.querySelector('.equalButton');
 let clearButton = document.querySelector('.clearButton');
 let percentageButton = document.querySelector('.percentage');
 let operators = document.querySelectorAll('.OPERATOR');
-
+let signButton = document.querySelector('.changeSign');
 let currentOperation;
 let firstNum = "";
 let secondNum = "";
@@ -79,6 +79,7 @@ equalButton.addEventListener('click', () => {
         let result = operate(currentOperation, firstNum, secondNum);
         displayScreen.textContent = result;
         firstNum = result.toString();
+        displayValue = firstNum;//I have added this line 
     }
     secondNum = "";
     currentOperation = "";
@@ -96,5 +97,18 @@ percentageButton.addEventListener('click', () => {
     let percentageResult = (parseFloat(displayValue) / 100).toFixed(2);
     displayValue = percentageResult.toString();
     displayScreen.textContent = displayValue;
+    firstNum = displayValue;
+    secondNum = ""
+    currentOperation = ""
 });
 
+signButton.addEventListener('click', () => {
+    // currentOperation = '...'
+    let signResult = -1 * parseFloat(displayValue);
+    console.log('signResult=' + signResult)
+    displayValue = signResult.toString();
+    console.log("displayValue= " + displayValue)
+    displayScreen.textContent = displayValue;
+    console.log("displayScreen.textcontext=" + displayScreen.textContent)
+    // displayValue = '0'
+})
