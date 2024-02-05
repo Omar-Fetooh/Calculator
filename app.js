@@ -51,12 +51,14 @@ function operate(operation, firstNum, secondNum) {
 
 function populateDisplay(number) {
     if (currentOperation) {  // if first number entered and add operation
+
         secondNum += number;
         displayValue = secondNum; //strings
     }
     else {
         firstNum += number;
         displayValue = firstNum; //strings
+        currentOperation = "";
     }
     displayScreen.textContent = displayValue; //strings
 }
@@ -69,6 +71,7 @@ numberButtons.forEach(button => {
 
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
+
         currentOperation = operator.textContent;
     });
 });
@@ -78,7 +81,7 @@ equalButton.addEventListener('click', () => {
         displayScreen.textContent = "Stop ,clown"
     }
     else {
-        if (currentOperation === undefined || currentOperation === "") {
+        if (currentOperation === undefined || currentOperation === "") {  // This line is for handling the equal if it is pressed early
             displayScreen.textContent = firstNum;
             displayValue = firstNum;
             return;
@@ -86,7 +89,7 @@ equalButton.addEventListener('click', () => {
         let result = operate(currentOperation, firstNum, secondNum);
         displayScreen.textContent = result;
         firstNum = result.toString();
-        displayValue = firstNum;//I have added this line 
+        displayValue = firstNum;//I have added this line    
     }
     secondNum = "";
     currentOperation = "";
