@@ -105,10 +105,12 @@ percentageButton.addEventListener('click', () => {
 signButton.addEventListener('click', () => {
     // currentOperation = '...'
     let signResult = -1 * parseFloat(displayValue);
-    console.log('signResult=' + signResult)
+    // console.log('signResult=' + signResult)
     displayValue = signResult.toString();
-    console.log("displayValue= " + displayValue)
+    // console.log("displayValue= " + displayValue)
     displayScreen.textContent = displayValue;
-    console.log("displayScreen.textcontext=" + displayScreen.textContent)
-    // displayValue = '0'
+    // console.log("displayScreen.textcontext=" + displayScreen.textContent)
+    firstNum = displayValue;
+    secondNum = ""
+    currentOperation = ""
 })
