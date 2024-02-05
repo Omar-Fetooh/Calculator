@@ -4,6 +4,8 @@
 
 This project implements an on-screen calculator using JavaScript, HTML, and CSS. It provides basic arithmetic operations such as addition, subtraction, multiplication, division,sign change and percentage 
 
+<a href="https://omar-fetooh.github.io/Calculator/">Live Preview</a>
+
 ## Features
 
 - Basic arithmetic operations: addition, subtraction, multiplication,division,sign change and percentage.
