@@ -5,6 +5,7 @@ let clearButton = document.querySelector('.clearButton');
 let percentageButton = document.querySelector('.percentage');
 let operators = document.querySelectorAll('.OPERATOR');
 let signButton = document.querySelector('.changeSign');
+let percesionButton = document.querySelector('.percision')
 let currentOperation;
 let firstNum = "";
 let secondNum = "";
@@ -49,10 +50,11 @@ function operate(operation, firstNum, secondNum) {
 }
 
 function populateDisplay(number) {
-    if (currentOperation) {  // if first number entered and and operation
+    if (currentOperation) {  // if first number entered and add operation
         secondNum += number;
         displayValue = secondNum; //strings
-    } else {
+    }
+    else {
         firstNum += number;
         displayValue = firstNum; //strings
     }
@@ -108,14 +110,16 @@ percentageButton.addEventListener('click', () => {
 });
 
 signButton.addEventListener('click', () => {
-    // currentOperation = '...'
     let signResult = -1 * parseFloat(displayValue);
-    // console.log('signResult=' + signResult)
     displayValue = signResult.toString();
-    // console.log("displayValue= " + displayValue)
     displayScreen.textContent = displayValue;
-    // console.log("displayScreen.textcontext=" + displayScreen.textContent)
     firstNum = displayValue;
     secondNum = ""
     currentOperation = ""
+})
+
+percesionButton.addEventListener('click', () => {
+    displayScreen.textContent += '.';
+    displayValue += '.'
+    populateDisplay('.')
 })
