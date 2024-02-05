@@ -2,9 +2,9 @@ let displayScreen = document.querySelector('.display')
 let numberButtons = document.querySelectorAll('.number')
 let equalButton = document.querySelector('.equalButton')
 let clearButton = document.querySelector('.clearButton')
+let percentageButton = document.querySelector('.percentage')
+
 let operators = document.querySelectorAll('.OPERATOR')
-
-
 let currentOperation;
 let firstNum;
 let secondNum;
@@ -62,7 +62,6 @@ numberButtons.forEach(button => {
         }
         else {
             secondNum = Number(button.textContent);
-
             ramEmpty = false;
         }
     })
@@ -93,4 +92,10 @@ clearButton.addEventListener('click', () => {
     displayScreen.textContent = 0;
     displayValue = "";
     ramEmpty = true;
+})
+
+
+percentageButton.addEventListener('click', () => {
+    displayValue = (firstNum / 100).toFixed(3);
+    displayScreen.textContent = displayValue;
 })
