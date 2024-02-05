@@ -76,6 +76,11 @@ equalButton.addEventListener('click', () => {
         displayScreen.textContent = "Stop ,clown"
     }
     else {
+        if (currentOperation === undefined || currentOperation === "") {
+            displayScreen.textContent = firstNum;
+            displayValue = firstNum;
+            return;
+        }
         let result = operate(currentOperation, firstNum, secondNum);
         displayScreen.textContent = result;
         firstNum = result.toString();
