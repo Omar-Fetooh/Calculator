@@ -95,7 +95,8 @@ svg {
 }
 
 svg:hover {
-    width: 80%;
+    /* width: 80%; */
     border: 2px solid white;
     border-radius: 50%;
+    opacity: .5;
 }
